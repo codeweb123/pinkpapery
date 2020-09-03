@@ -1,9 +1,13 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import './card-item.styles.scss';
 
-const CardItem = ({ title, imageUrl, size }) => (
-    <div className={`${size} card-item`}>
+const CardItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
+    <div 
+    className={`${size} card-item`} 
+    onClick={() => history.push(`${match.url}${linkUrl}`)}
+    >
         <div
         className='background-image'
         style={{
@@ -17,4 +21,4 @@ const CardItem = ({ title, imageUrl, size }) => (
     </div>
 );
 
-export default CardItem;
+export default withRouter(CardItem);

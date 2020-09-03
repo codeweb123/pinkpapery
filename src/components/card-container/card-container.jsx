@@ -12,25 +12,29 @@ class CardContainer extends React.Component {
             sections: [{
                 title: 'Custom Stationary',
                 imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/61ZVmVzFloL._AC_SL1049_.jpg',
-                id: 1
+                id: 1,
+                linkUrl:''
             },
             {
                 title: 'Calendars',
                 imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/61tZdKlHsZL._AC_SL1000_.jpg',
-                id: 2
+                id: 2,
+                linkUrl:''
 
             },
             {
                 title: 'Custom Planners',
                 imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/81-0pNcnghL._AC_SL1500_.jpg',
-                id: 3
+                id: 3,
+                linkUrl:''
 
             },
             {
                 title: 'Paper Bar',
                 imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/51bGtO9HCgL._AC_SL1470_.jpg',
                 size: 'large',
-                id: 4
+                id: 4,
+                linkUrl:''
 
             },
             {
@@ -38,6 +42,7 @@ class CardContainer extends React.Component {
                 imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/81CxYNVzDLL._AC_SL1500_.jpg',
                 size: 'large',
                 id: 5,
+                linkUrl:''
 
             }]
         }
@@ -46,8 +51,8 @@ class CardContainer extends React.Component {
     render() {
         return (
             <div className='card-container'>
-                {this.state.sections.map(({title, imageUrl, id, size }) => (
-                        <CardItem key={id} title={title} imageUrl={imageUrl} size={size} />
+                {this.state.sections.map(({ id, ...otherSectionProps }) => (
+                        <CardItem key={id} {...otherSectionProps} />
                     ))}
             </div>
         )
