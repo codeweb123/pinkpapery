@@ -4,11 +4,19 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 70px;
-  
+
     .logo-container {
       height: 100%;
-      width: 70px;
+      width: 100px;
       padding:50px;
+    }
+
+    .companyname {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 60px 15px;
     }
   
     .options {
