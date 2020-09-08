@@ -2,6 +2,9 @@ import React from 'react';
 
 import FormInput from '../form-input/form-input.jsx';
 import Button from '../button/button.jsx';
+
+import { GoogleLogin } from 'react-google-login';
+
 import './sign-in.styles.scss';
 
 class SignIn extends React.Component{
@@ -51,6 +54,7 @@ class SignIn extends React.Component{
                     />
                     <Button 
                     type='submit' >Sign in</Button>
+                    <Button onClick={GoogleLogin} > Sign in </Button>
                 </form>
             </div>
         );
