@@ -1,9 +1,8 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 import FormInput from '../form-input/form-input.jsx';
 import Button from '../button/button.jsx';
 
-import { GoogleLogin } from 'react-google-login';
 
 import './sign-in.styles.scss';
 
@@ -53,8 +52,9 @@ class SignIn extends React.Component{
                     required 
                     />
                     <Button 
-                    type='submit' >Sign in</Button>
-                    <Button onClick={GoogleLogin} > Sign in </Button>
+                    type='submit'>Sign in</Button>
+                    <Button><Link to="/auth/google_oauth2">*</Link>Login with Google</Button>
+
                 </form>
             </div>
         );
