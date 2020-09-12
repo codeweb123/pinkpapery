@@ -12,17 +12,17 @@ const Footer = () => (
             <img className="footer-items" src={Facebook} alt='facebook' ></img>
             </a>
             &nbsp;&nbsp;
-            <a href="https://www.pinterest.com/thepinkpapery/">
+            <a href="https://www.pinterest.com/thepinkpapery/" target="blank">
             <img className="footer-items" src={Pinterest} alt='pinterest'  ></img>
             </a>
             &nbsp;&nbsp;
-            <a href="https://www.instagram.com/thepinkpapery/">
+            <a href="https://www.instagram.com/thepinkpapery/" target="blank">
             <img className="footer-items" src={Instagram} alt='instagram' ></img>
             </a>
             &nbsp;&nbsp;
         <div className='copyright'>
             <h6>Copyright &copy; JiyonCodes</h6>
-            <a href= 'https://github.com/codeweb123/pinkpapery'>
+            <a href= 'https://github.com/codeweb123/pinkpapery' target="blank">
                 <img className="footer-items" src={Github} alt='github' ></img>
             </a>
         </div>
