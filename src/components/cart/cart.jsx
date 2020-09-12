@@ -2,9 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Button from '../button/button';
 import { withRouter } from 'react-router-dom';
-import CartItem from '../cart-item/cart-item.jsx'
+
+import CartItem from '../cart-item/cart-item.jsx';
+import { selectCartItems, selectCartItemsCount } from '../../redux/cart/cart.selectors';
+
 import './cart.styles.scss';
 import { toggleCartHidden } from '../../redux/cart/cart.actions.js';
+import { createStructuredSelector } from 'reselect';
 
 const Cart = ({ cartItems, history, dispatch }) => (
     <div className= 'cart'>
@@ -27,8 +31,8 @@ const Cart = ({ cartItems, history, dispatch }) => (
     </div>
 );
 
-const mapStateToProps = ({ cart: { cartItems } }) => ({
-    cartItems
+const mapStateToProps = createStructuredSelector({
+    cartItems: selectCartItems
 });
 
 export default withRouter(connect(mapStateToProps)(Cart));

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectCartHidden } from '../../redux/cart/cart.selectors';
+import { selectCurrentUser } from '../../redux/user/user.selectors';
 import CartIcon from '../cart-icon/cart-icon';
 import Cart from '../cart/cart';
 import Logo from  '../../assets/logo1.jpg';
@@ -15,11 +18,17 @@ const Navbar = ({ currentUser, hidden }) => (
             <h1>The Pink Papery</h1>
         </div>
         <div className='options'>
+            <Link className='option' to='/'>
+                HOME
+            </Link>
             <Link className='option' to='/shop'>
                 SHOP
             </Link>
-            <Link className='option' to='/contact'>
-                CONTACT
+            <Link className='option' to='/about'>
+                ABOUT
+            </Link>
+            <Link className='option' to='/shipping'>
+                SHIPPING
             </Link>
             <CartIcon />
         </div>
@@ -27,9 +36,9 @@ const Navbar = ({ currentUser, hidden }) => (
     </div>
 );
 
-const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
-    currentUser,
-    hidden
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser,
+    hidden: selectCartHidden
   });
   
   export default connect(mapStateToProps)(Navbar);
