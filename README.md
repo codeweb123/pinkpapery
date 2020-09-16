@@ -2,6 +2,9 @@ ThePinkPapery is a mock e-commerce website created with a React/Redux/Thunk fron
 
 The Pink Papery is project #5 and my Final project with the Flatiron School 2020.
 
+Link to pinkpapery-rails-api
+[https://github.com/codeweb123/pinkpapery-rails-api]
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
