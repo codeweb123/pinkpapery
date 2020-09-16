@@ -1,3 +1,7 @@
+ThePinkPapery is a mock e-commerce website created with a React/Redux/Thunk frontend and utilizes React reuseable components. It features a Ruby on Rails API backend with Stripe payment integration. Users can add items to cart, remove and checkout. 
+
+The Pink Papery is project #5 and my Final project with the Flatiron School 2020.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
