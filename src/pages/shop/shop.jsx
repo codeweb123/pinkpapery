@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Collection from '../../components/collection/collection.jsx';
 
 class ShopPage extends React.Component {

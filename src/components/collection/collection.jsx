@@ -1,7 +1,5 @@
 import React from 'react';
-
 import CollectionItem from '../collection-item/collection-item.jsx';
-
 import './collection.styles.scss';
 
 const Collection = ({ title, items }) => (

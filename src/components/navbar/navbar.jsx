@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
-import { selectCurrentUser } from '../../redux/user/user.selectors';
 import CartIcon from '../cart-icon/cart-icon';
 import Cart from '../cart/cart';
 import Logo from  '../../assets/logo1.jpg';
 import './navbar.styles.scss';
 
-const Navbar = ({ currentUser, hidden }) => (
+const Navbar = ({ hidden }) => (
     <div className='navbar'>
         <Link className='logo-container' to="/">
             <img src={Logo} className='logo' />
@@ -37,7 +36,6 @@ const Navbar = ({ currentUser, hidden }) => (
 );
 
 const mapStateToProps = createStructuredSelector({
-    currentUser: selectCurrentUser,
     hidden: selectCartHidden
   });
   

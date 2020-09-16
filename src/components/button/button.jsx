@@ -2,10 +2,10 @@ import React from 'react';
 
 import './button.styles.scss';
 
-const CustomButton = ({ children, ...otherProps }) => (
+const Button = ({ children, ...otherProps }) => (
   <button className='button' {...otherProps}>
     {children}
   </button>
 );
 
-export default CustomButton;
+export default Button;
