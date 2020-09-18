@@ -36,4 +36,6 @@ const mapStateToProps = createStructuredSelector({
 });
 
 export default withRouter(connect(mapStateToProps)(Cart));
-
+//withRouter is taking a component argument
+//will have access to history prop
+//dispatch given if 2 arguments not given to connect use that dispatch to toggleCartHidden. 
