@@ -12,3 +12,5 @@ const HomePage = () => (
 );
 
 export default HomePage;
+
+//CardContainer component renders on homepage.jsx

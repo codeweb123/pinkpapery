@@ -9,7 +9,6 @@ import ShippingPage from './pages/shipping/shipping';
 import Navbar from './components/navbar/navbar.jsx';
 import Footer from './components/footer/footer.jsx';
 
-
 function App() {
 
   return (
