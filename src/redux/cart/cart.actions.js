@@ -15,3 +15,4 @@ export const clearItemFromCart = item => ({
   });
 
   //action creator
+  //it has a type: and a payload:
