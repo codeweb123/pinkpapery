@@ -35,6 +35,9 @@ const mapStateToProps = createStructuredSelector({
     cartItems: selectCartItems
 });
 
+//make sure the cart dropdown does not re-render everytime 
+//the state changes unrelated to the cart items.
+
 export default withRouter(connect(mapStateToProps)(Cart));
 //withRouter is taking a component argument
 //will have access to history prop

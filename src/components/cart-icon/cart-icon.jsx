@@ -22,5 +22,7 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = createStructuredSelector({
     itemCount: selectCartItemsCount
 });
+//selector displays cart item count
+//display as itemCount as a prop on the component.
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
