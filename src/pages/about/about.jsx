@@ -14,6 +14,8 @@ const AboutPage = () => (
             <div className='aboutimg'>
                 <img className='img' src={Weddinginvite} alt='item' />
             </div>
+            <div>
+            </div>
                 <h1>
                     Handcrafted and Hands-on
                 </h1>
