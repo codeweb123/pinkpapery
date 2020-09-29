@@ -8,7 +8,7 @@ import AboutPage from './pages/about/about';
 import ShippingPage from './pages/shipping/shipping';
 import Navbar from './components/navbar/navbar.jsx';
 import Footer from './components/footer/footer.jsx';
-
+import { connect } from 'react-redux';
 function App() {
 
   return (
@@ -27,4 +27,7 @@ function App() {
 }
 
 
-export default App
+const mapStateToProps = (state) => ({ state })
+
+export default connect(mapStateToProps)(App);
+

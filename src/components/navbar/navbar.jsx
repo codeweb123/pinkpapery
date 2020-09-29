@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { selectCartHidden } from '../../redux/cart/cart.selectors';
+import { selectCartHidden } from '../../redux/selectors/cart.selectors';
 import CartIcon from '../cart-icon/cart-icon';
 import Cart from '../cart/cart';
 import Logo from  '../../assets/logo1.jpg';

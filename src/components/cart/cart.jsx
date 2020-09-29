@@ -4,10 +4,10 @@ import Button from '../button/button';
 import { withRouter } from 'react-router-dom';
 
 import CartItem from '../cart-item/cart-item.jsx';
-import { selectCartItems } from '../../redux/cart/cart.selectors';
+import { selectCartItems } from '../../redux/selectors/cart.selectors';
 
 import './cart.styles.scss';
-import { toggleCartHidden } from '../../redux/cart/cart.actions.js';
+import { toggleCartHidden } from '../../redux/actions/cart/carthidden';
 import { createStructuredSelector } from 'reselect';
 
 const Cart = ({ cartItems, history, dispatch }) => (

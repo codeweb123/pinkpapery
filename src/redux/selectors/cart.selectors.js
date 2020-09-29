@@ -1,7 +1,6 @@
 //2 types of selectors
 //Input and output (uses selectors)
 //Input selector is selectCart
-
 import { createSelector } from 'reselect';
 
 const selectCart = state => state.cart;//gets whole reducer state and gets a slice of it
@@ -19,30 +18,29 @@ export const selectCartItems = createSelector(
 );
 
 export const selectCartHidden = createSelector(
-    [selectCart],
+  [selectCart],
     cart => cart.hidden
-  );
-
+);
 
 export const selectCartItemsCount = createSelector(
   [selectCartItems],
-  cartItems =>
+    cartItems =>
     cartItems.reduce(
       (accumalatedQuantity, cartItem) =>
-        accumalatedQuantity + cartItem.quantity,
+      accumalatedQuantity + cartItem.quantity,
       0
     )
 );
 
 export const selectCartTotal = createSelector(
-    [selectCartItems],
+  [selectCartItems],
     cartItems =>
-      cartItems.reduce(
-        (accumalatedQuantity, cartItem) =>
-          accumalatedQuantity + cartItem.quantity * cartItem.price,
-        0
-      )
-  );
+    cartItems.reduce(
+      (accumalatedQuantity, cartItem) =>
+      accumalatedQuantity + cartItem.quantity * cartItem.price,
+      0
+    )
+);
 
   //Pass in [selectCartItems] and get cartItems and use reduce method on the cartItems and gives us the total quantity on the cartItems. 
 

@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux';
-import cartReducer from './cart/cart.reducer.js';
+import cartReducer from './reducers/cart.reducer.js';
+import cardcontainerReducer from './reducers/cardcontainer.reducer.js';
+import shopReducer from './reducers/shop.reducer.js';
 //import wishlistReducer from './wishlist/wishlist.reducer.js';
 
 export default combineReducers({
     cart: cartReducer,
+    cardcontainer: cardcontainerReducer,
+    shop: shopReducer
     //wishlist: wishlistReducer
 });
 

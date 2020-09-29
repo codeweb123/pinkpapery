@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { toggleCartHidden } from '../../redux/cart/cart.actions';
-import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
+import { toggleCartHidden } from '../../redux/actions/cart/carthidden.js';
+import { selectCartItemsCount } from '../../redux/selectors/cart.selectors';
 import { ReactComponent as ShoppingCart } from '../../assets/shoppingcart.svg';
 
 import './cart-icon.styles.scss';
