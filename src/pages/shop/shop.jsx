@@ -8,31 +8,54 @@ import { fetchAllCollections } from '../../redux/actions/shop/fetchAllCollection
 // this one is just a function that returns an object
 
 class ShopPage extends React.Component {
+  constructor(props) {
+    super(props)
+      this.state = {
+         collections: []
+      }
+  }
 
     componentDidMount() {
-      fetch('/api/v1/categories')
-        .then(res => res.json())
-        .then(collectionObj => {
-        this.props.boundfetchAllCollections(collectionObj.items)
+      this.props.boundfetchAllCollections()
+      }
+      //getCollections() {
+        //   return fetch('/api/v1/categories')
+        //   .then(response => response.json())
+         //  .then(
+           //    data => {
+       //        this.setState({
+        //       collections: data
+        //   });
+       //})}
+   
+       //componentDidMount() {
+        //   this.getCollections()
+       //}
         // dispatch(fetchAllCollections(collectionObj.items))
         // bound with dispatch and it's only way we can make it to the reducer.
         // the one we get from props 
         // (this.props.boundfetchAllCollections) we get from
         // connect as the 2nd argument.
-        })
-      }
 render() {
-     const {collections} = this.state;
+  console.log(this.props)
+     const {collections} = this.state
        return (
           <div className='shop-page'>
            {
-               collections.map(({ id, ...otherCollectionProps }) => (
-                   <Collection key={id} {...otherCollectionProps} /> 
+            this.props.collections.map(({ id, ...otherCollectionProps }) => (
+            <Collection key={id} {...otherCollectionProps} /> 
                 ))
            }
-          </div>);
+          </div>
+        )  
+      }
     }
-  }
+  
+    //function mapStateToProps(state) {
+     // return {
+      //  collections: state.collections
+     // }
+    //}
     const mapStateToProps = createStructuredSelector({
         collections: selectCollections
     }
@@ -63,10 +86,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);
      //   this.state = {
       //      collections: []
      //   };
-   // }
-
-   // componentDidMount() {
-    //    this.addItem()
    // }
 
     //getCollections() {

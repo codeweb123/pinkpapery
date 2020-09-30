@@ -1,7 +1,6 @@
 // uppercase strings for err handling
 // action is the network request 
 // (the instruction for the reducer)
-
 const ADD_ITEM = "ADD_ITEM"
 
 export const addItem = item => ({

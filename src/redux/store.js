@@ -2,6 +2,9 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './root-reducer';
 
+//we use thunk for organization. 
+//Organize the logic(fetch) out of components 
+//Middleware is any bit of code that intercepts a process and changes the outcome
 //const middlewares = [thunk];
 
 //store is our Single Source of Truth...the holy grail!
