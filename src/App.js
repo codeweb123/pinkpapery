@@ -8,7 +8,11 @@ import AboutPage from './pages/about/about';
 import ShippingPage from './pages/shipping/shipping';
 import Navbar from './components/navbar/navbar.jsx';
 import Footer from './components/footer/footer.jsx';
-import { connect } from 'react-redux';
+//import { connect } from 'react-redux';
+
+// App.js is built to serve makers of static single page apps. 
+// Keeps all page navigation 
+
 function App() {
 
   return (
@@ -26,8 +30,8 @@ function App() {
   );
 }
 
+export default App
 
-const mapStateToProps = (state) => ({ state })
-
-export default connect(mapStateToProps)(App);
+//const mapStateToProps = (state) => ({ state })
+//connect(mapStateToProps)(App);
 
