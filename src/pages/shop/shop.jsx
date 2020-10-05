@@ -7,38 +7,28 @@ import { render } from '@testing-library/react';
 import { fetchAllCollections } from '../../redux/actions/shop/fetchAllCollections.js' 
 // this one is just a function that returns an object
 
+//class container component
 class ShopPage extends React.Component {
+  //initializes
   constructor(props) {
+  //allows class component to access methods/functionality from React.Component  
     super(props)
       this.state = {
          collections: []
       }
   }
-
-    componentDidMount() {
+  //lifecycle method( Mounting Phase)- first time on the DOM
+  componentDidMount() {
       this.props.boundfetchAllCollections()
       }
-      //getCollections() {
-        //   return fetch('/api/v1/categories')
-        //   .then(response => response.json())
-         //  .then(
-           //    data => {
-       //        this.setState({
-        //       collections: data
-        //   });
-       //})}
-   
-       //componentDidMount() {
-        //   this.getCollections()
-       //}
-        // dispatch(fetchAllCollections(collectionObj.items))
-        // bound with dispatch and it's only way we can make it to the reducer.
-        // the one we get from props 
         // (this.props.boundfetchAllCollections) we get from
         // connect as the 2nd argument.
+        // bound with dispatch and it's only way we can make it to the reducer. 
 render() {
-  console.log(this.props)
-     const {collections} = this.state
+  // When called, it should examine this.props and this.state
+  //console.log(this.props)
+  //const {collections} = this.state
+  //destructure the collections after the render and before the return.
        return (
           <div className='shop-page'>
            {
@@ -50,35 +40,30 @@ render() {
         )  
       }
     }
-  
-    //function mapStateToProps(state) {
-     // return {
-      //  collections: state.collections
-     // }
-    //}
+
     const mapStateToProps = createStructuredSelector({
         collections: selectCollections
-    }
-  );
+    });
+  //return all of the collections from the shop.
   //it is up to us to determine what we need for 
+
   //this component to compose an object that will be merged to props.
     const mapDispatchToProps = (dispatch) => {
       return {
         boundfetchAllCollections: (items) => dispatch(fetchAllCollections(items))
-    }
-  };
+      }
+    };
 
-// the parentheses around the component's name invokes the function that it returns. 
 export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);
-//connect takes 2 arguments
+// the parentheses around the ShopPage component invokes the function that it returns. 
 //First argument is a function that receives state from connect as an argument.
-//the function returns an object that is merged to this component's props.
-
-// use connect to access the Redux store (includes State and Dispatch)
-// connect returns a function that recieves components as arguments.
+//The function returns an object that is merged to this component's props.
+//Second argument passes in the dispatch function.
 //connect returns a HOC.
-// that returned function will pass any information we need from the 
+// That returned function will pass any information we need from the 
 //Redux store's state or a wrapped action creator to our component as props.
+
+
 
 //constructor(props) {
     //    super(props);

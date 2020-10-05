@@ -16,3 +16,6 @@ const Collection = ({ title, items }) => (
 );
 
 export default Collection;
+
+//.map with the whole item and render the <Collection/>
+//.map requires an id

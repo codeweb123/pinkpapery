@@ -11,13 +11,14 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         case 'TOGGLE_CART_HIDDEN':
             return {
                 ...state,
-                hidden: !state.hidden
+                hidden: !state.hidden //whatever boolean value is, do the oppposite
             };
         case 'ADD_ITEM':
             return {
                 ...state,
                 cartItems: addItemToCart(state.cartItems, action.payload)
-            };
+            };//return all of the state, but now in the cartItems: array, addItemToCart and 
+            //pass in the existing cartItems and then add the action.payload to the end of array.
         case 'CLEAR_ITEM_FROM_CART':
             return {
                 ...state,
@@ -26,9 +27,9 @@ const cartReducer = (state = INITIAL_STATE, action) => {
               )
             };
             //return a new object, spread state, update cartItems: so it returns a new array without the item in the array.
-            //we are going to call on the existing state of the cart items array and filter it passing in 
-            //the cartItem and if teh cartItem.id does not match the action.payload.id (which is the item we are
-            // trying to remove) and then I want you to keep it. returns TRUE!  
+            //We are going to call on the existing state of the cart items array and filter it passing in 
+            //the cartItem and if the cartItem.id does not match the action.payload.id (which is the item we are
+            // trying to remove) and then I want to keep it. returns TRUE!  
             //If it does match the item id that we are trying to remove from the payload then I want you to filter it out.
            //.filter() returns anything that yields true and gives a new array.
         default:

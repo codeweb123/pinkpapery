@@ -1,16 +1,24 @@
+const FETCH_COLLECTIONS = "FETCH_COLLECTIONS"
 //Action Creators do exactly what they sound like, 
 //they create the action objects for you.
+export function fetchAllCollections(collectionArray) {
+    return function(dispatch) {
+    fetch('api/v1/categories')
+    .then(res => res.json())
+    .then(data => { 
+    dispatch({type: FETCH_COLLECTIONS, payload: data})
+            }
+        )
+    }
 
-const FETCH_COLLECTIONS = "FETCH_COLLECTIONS"
+}
 
-// call dispatch takes in an action and passes it 
-//to the reducer as an argument.
-
+// Call dispatch takes in an action and passes it to the reducer as an argument.
 //Reducer recieves the argument and asks the action.type of object. 
-//return the state and message of payload.
-//changes state through the reducer.
+//Return the state and message of payload.
+//Changes state through the reducer.
 
-//our actions now returns functions
+//Our actions now returns functions
 //WHAT'S THE PROBLEM WHEN TRYING TO WRITE THE FETCH IN THE ACTION?
   //WE DIDN'T HAVE DISPATCH
   //THUNK ALLOWS DISPATCH (THE FUNCTION FROM THE STORE) TO NOW ACCEPT _EITHER_ OBJECTS _OR_ FUNCTIONS
@@ -25,19 +33,6 @@ const FETCH_COLLECTIONS = "FETCH_COLLECTIONS"
     //so using dispatch inside of it gets around the fact that it will only return a promise
     //that's why it's considered ASYNC Redux, because you will only return action creators that are functions if you are making a fetch request and need to change the redux store's state with the values received in the fetch 
     //fetch("https://www.googleapis.com/books/v1/volumes?q=dogs")
-
-
-export function fetchAllCollections(collectionArray) {
-    return function(dispatch) {
-    fetch('api/v1/categories')
-    .then(res => res.json())
-    .then(data => { 
-    dispatch({type: FETCH_COLLECTIONS, payload: data})
-            }
-        )
-    }
-
-}
 
 //Actions
 //The idea is that you dispatch actions onto redux, 

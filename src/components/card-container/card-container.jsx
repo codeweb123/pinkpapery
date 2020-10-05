@@ -5,10 +5,11 @@ import { selectCardContainerSections } from '../../redux/selectors/cardcontainer
 import CardItem from '../card-item/card-item.jsx';
 import './card-container.styles.scss';
 //use func component bc I'm not holding state here. 
+
 const CardContainer = ({ sections }) => (
 
     <div className='card-container'>
-        {sections.map(({ id, ...otherSectionProps }) => (
+        {sections.map(({ id, ...otherSectionProps }) => (//ES6 syntax...otherSectionProps to spread the values of the rest of the props.
                 <CardItem key={id} {...otherSectionProps} />
             ))}
     </div>

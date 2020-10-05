@@ -33,10 +33,11 @@ const Navbar = ({ hidden }) => (
         </div>
         {hidden ? null : <Cart />}
     </div>
-);
+);//Ternary operator, if hidden is true then null, if not show <Cart/> dropdown.
 
 const mapStateToProps = createStructuredSelector({
     hidden: selectCartHidden
   });
+  //By passing mapStateTopProps to connect we are getting hidden prop as selectCartHidden.
   
   export default connect(mapStateToProps)(Navbar);
