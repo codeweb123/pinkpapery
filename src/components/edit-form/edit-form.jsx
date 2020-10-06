@@ -1,42 +1,65 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { editItem } from '../../redux/actions/shop/editItems';
+import './edit-form.styles.scss';
 
 class EditForm extends Component {
-
+//form for edit, start blank
     state = {
-        category_id: '',
+        id: '',
         name: '',
-        imageUrl: '',
+        imgUrl: '',
         price: ''
-    }
-
+     }
+//I need to find the item from the collection array
+  //  componentDidMount() {
+   //     this.findItem()
+  //  }
 
     handleChange = e => {
         const { name, value } = e.target
-
         this.setState({
             [name]: value
         })
     }
 
-   
+   // findItem = () => {
+    //    const { collections, id} = this.props
+     //   console.log(collections)
+     //   const collection = collections.find(collection => collection.id === id)
+      //  this.setState({
+       //     id: collection.id,
+        //    name: collection.name,
+         //   imageUrl: collection.imageUrl,
+          //  price: collection.price
+     //   })
+   // }
+
+    update = e => {
+        e.preventDefault()
+        this.props.editItem(this.state)
+    }
+
     render() {
         return (
             <>
-            Edit Form
-            <form onSubmit={}>
+            <div className="edit-form">
+            <h2>Edit Form</h2>
+            <form onSubmit={this.update}>
 
-                <label>Category ID</label>
+                <label>ID</label>
+                &nbsp;&nbsp;
                 <input 
                     type='integer' 
-                    value={this.state.category_id} 
+                    value={this.state.id} 
                     onChange={this.handleChange} 
-                    name='category_id'
+                    name='id'
                 />
 
-                <br />
-                <br />
-
+                
+&nbsp;&nbsp;&nbsp;&nbsp;
                 <label>Name</label>
+                &nbsp;&nbsp;
                 <input 
                     type='text' 
                     value={this.state.name} 
@@ -44,38 +67,40 @@ class EditForm extends Component {
                     name='name'
                 />
 
-                <br />
-                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;
 
                 <label>Image</label>
+                &nbsp;&nbsp;
                 <input 
-                    type='image' 
+                    type='string' 
                     value={this.state.imageUrl} 
                     onChange={this.handleChange} 
                     name='imageUrl'
                 />
 
-                <br />
-                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;
 
               <label>Price</label>
+              &nbsp;&nbsp;
                 <input 
                     type='integer' 
                     value={this.state.price} 
                     onChange={this.handleChange} 
                     name='price'
                 />
-
                 <br />
                 <br />
-
-                <input type='submit' value='Edit Item' />  
-
+                <center><input type='submit' value='Edit Item' />  
+                </center>
             </form>
-
+            </div>
             </>
         );
     }
 }
 
-export default EditForm;
+const mapStateToProps = state => {
+    return { collections: state.collections }
+}
+
+export default connect(mapStateToProps, { editItem })(EditForm);

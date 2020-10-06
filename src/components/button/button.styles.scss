@@ -1,5 +1,5 @@
 .button {
-    min-width: 165px;
+    min-width: 100px;
     width: auto;
     height: 50px;
     letter-spacing: 0.5px;
@@ -13,6 +13,7 @@
     font-weight: bolder;
     border: none;
     cursor: pointer;
+    margin: 10px 0px 10px 0px;
   
     &:hover {
       background-color: white;
