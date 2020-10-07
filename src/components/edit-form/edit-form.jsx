@@ -9,12 +9,9 @@ class EditForm extends Component {
         id: '',
         name: '',
         imgUrl: '',
-        price: ''
+        price: '',
+        category_id: ''
      }
-//I need to find the item from the collection array
-  //  componentDidMount() {
-   //     this.findItem()
-  //  }
 
     handleChange = e => {
         const { name, value } = e.target
@@ -23,21 +20,9 @@ class EditForm extends Component {
         })
     }
 
-   // findItem = () => {
-    //    const { collections, id} = this.props
-     //   console.log(collections)
-     //   const collection = collections.find(collection => collection.id === id)
-      //  this.setState({
-       //     id: collection.id,
-        //    name: collection.name,
-         //   imageUrl: collection.imageUrl,
-          //  price: collection.price
-     //   })
-   // }
-
     update = e => {
         e.preventDefault()
-        this.props.editItem(this.state)
+        this.props.boundeditItem(this.state)
     }
 
     render() {
@@ -46,7 +31,6 @@ class EditForm extends Component {
             <div className="edit-form">
             <h2>Edit Form</h2>
             <form onSubmit={this.update}>
-
                 <label>ID</label>
                 &nbsp;&nbsp;
                 <input 
@@ -54,10 +38,8 @@ class EditForm extends Component {
                     value={this.state.id} 
                     onChange={this.handleChange} 
                     name='id'
-                />
-
-                
-&nbsp;&nbsp;&nbsp;&nbsp;
+                />  
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <label>Name</label>
                 &nbsp;&nbsp;
                 <input 
@@ -66,9 +48,7 @@ class EditForm extends Component {
                     onChange={this.handleChange} 
                     name='name'
                 />
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <label>Image</label>
                 &nbsp;&nbsp;
                 <input 
@@ -77,21 +57,29 @@ class EditForm extends Component {
                     onChange={this.handleChange} 
                     name='imageUrl'
                 />
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-
-              <label>Price</label>
-              &nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label>Price</label>
+                &nbsp;&nbsp;
                 <input 
                     type='integer' 
                     value={this.state.price} 
                     onChange={this.handleChange} 
                     name='price'
                 />
-                <br />
-                <br />
-                <center><input type='submit' value='Edit Item' />  
-                </center>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label>Category ID</label>
+                &nbsp;&nbsp;
+                <input 
+                    type='integer' 
+                    value={this.state.category_id} 
+                    onChange={this.handleChange} 
+                    name='category_id'
+                />
+                <br>
+                </br>
+                <br>
+                </br>
+                <center><input type='submit' value='Edit Item' /></center>
             </form>
             </div>
             </>
@@ -103,4 +91,10 @@ const mapStateToProps = state => {
     return { collections: state.collections }
 }
 
-export default connect(mapStateToProps, { editItem })(EditForm);
+const mapDispatchToProps = (dispatch) => {
+    return {
+      boundeditItem: (item) => dispatch(editItem(item))
+    }
+  };
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditForm);

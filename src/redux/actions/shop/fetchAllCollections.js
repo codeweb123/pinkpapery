@@ -10,7 +10,6 @@ export function fetchAllCollections(collectionArray) {
             }
         )
     }
-
 }
 
 // Call dispatch takes in an action and passes it to the reducer as an argument.
@@ -31,7 +30,9 @@ export function fetchAllCollections(collectionArray) {
   //return function(dispatch){
     //we need dispatch inside of this function because it is a fetch, which will always return a promise
     //so using dispatch inside of it gets around the fact that it will only return a promise
-    //that's why it's considered ASYNC Redux, because you will only return action creators that are functions if you are making a fetch request and need to change the redux store's state with the values received in the fetch 
+    //that's why it's considered ASYNC Redux, because you will only return action creators 
+    //that are functions if you are making a fetch request and need to change the redux 
+    //store's state with the values received in the fetch 
     //fetch("https://www.googleapis.com/books/v1/volumes?q=dogs")
 
 //Actions

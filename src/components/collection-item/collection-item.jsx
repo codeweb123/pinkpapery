@@ -6,14 +6,10 @@ import { addItem } from '../../redux/actions/cart/addItem';
 //after importing addItem from cart.actions and connect we know we need to add the mapDispatchToProps
 //because we need to dispatch this addItem action.
 import './collection-item.styles.scss';
-import { createStructuredSelector } from 'reselect';
-import {selectCollections} from '../../redux/selectors/shop.selectors.js';
 
-const CollectionItem = ({ item, addItem, handleEdit }) => {
-    
+const CollectionItem = ({ item, addItem }) => {
     const { name, price, imageUrl } = item;
     //destructure these properties but destructure them off the item. 
-    
     return(
     <div className='collection-item'>
         <div 
@@ -27,17 +23,9 @@ const CollectionItem = ({ item, addItem, handleEdit }) => {
             <span className='price'>{price}</span>
         </div>
         <Button onClick ={() => addItem(item)} inverted="true"> Add to cart</Button>
-        <Button onClick ={() => handleEdit(item)} inverted="true"> Edit item</Button>
         </div>
-        //edit button to each item object.
         //button onclick function will fire the addItem calling the method and passing item in.
 )};
-
-const mapStateToProps = createStructuredSelector({
-    collections: selectCollections
-    });
-
-
 
 const mapDispatchToProps = dispatch => ({
     addItem: item => dispatch(addItem(item)),

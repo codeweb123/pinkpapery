@@ -7,16 +7,15 @@ import { render } from '@testing-library/react';
 import { fetchAllCollections } from '../../redux/actions/shop/fetchAllCollections.js' 
 import EditForm from '../../components/edit-form/edit-form.jsx'
 // this one is just a function that returns an object
-
 //class container component
 class ShopPage extends React.Component {
   //initializes
   constructor(props) {
   //allows class component to access methods/functionality from React.Component  
     super(props)
-      this.state = {
-         collections: []
-      }
+      //this.state = {
+       //  collections: []
+      //}
   }
   //lifecycle method( Mounting Phase)- first time on the DOM
   componentDidMount() {
