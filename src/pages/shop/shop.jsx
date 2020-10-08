@@ -13,20 +13,23 @@ class ShopPage extends React.Component {
   constructor(props) {
   //allows class component to access methods/functionality from React.Component  
     super(props)
-      //this.state = {
-       //  collections: []
-      //}
   }
   //lifecycle method( Mounting Phase)- first time on the DOM
   componentDidMount() {
       this.props.boundfetchAllCollections()
       }
 
-  handleEdit = (item) => {
-    this.setState({
-      id: item.id
-    })
-  }
+  //handleEdit = () => {
+   // this.setState(
+   //   {
+    //  id: this.props.id,
+    //  name: this.props.name,
+    //  imgUrl: this.props.imgUrl,
+    //  price: this.props.price,
+    //  category_id: this.props.category_id
+    //}
+    //)
+  //}
         // (this.props.boundfetchAllCollections) we get from
         // connect as the 2nd argument.
         // bound with dispatch and it's only way we can make it to the reducer. 

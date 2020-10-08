@@ -5,7 +5,28 @@ export default function shopReducer(state={collections: []}, action){
             return {collections: action.payload}
         case 'EDIT_ITEMS':
             console.log("We made it into the reducer")
-            return {...state, items: action.payload}
+            return {...state, collections: state.collections.map(collection => collection.id === action.payload.category_id ? {...state, items: action.payload} : collection)}
+            default: 
+            return state;
+        }
+}
+            //if (collection.id === action.payload.category_id) {
+             //       {...collection, item: action.payload}
+            //else {
+             //   return collection
+           // {...state, items: action.payload}
+            // return {...state, collections: state.collections.map(collection => collection.id === action.payload.id ? action.payload : collection)}
+            //return {...state, items: {...state.items, action.payload}}
+            //return {...state, items: {...state.items, items: action.payload}}
+           // default: 
+            //    return state;
+       // }
+//}
+            //if (collection.id === action.payload.category_id) {
+            //        {...collection, item: action.payload}
+            //else {
+             //    return collection
+           // {...state, items: action.payload}
             //[
            //     ...state.collections.filter(collection => collection.id !== action.payload.id),
            //     Object.assign({}, action.payload)
@@ -20,7 +41,8 @@ export default function shopReducer(state={collections: []}, action){
 //                       {...collection, item: action.payload}
                    // else {
                    //     return collection
-            default: 
-                return state;
-        }
-}
+           // default: 
+            //    return state;
+      //  }
+    
+//}
