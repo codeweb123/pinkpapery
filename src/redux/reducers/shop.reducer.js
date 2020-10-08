@@ -1,15 +1,25 @@
 export default function shopReducer(state={collections: []}, action){
     switch (action.type) {
         case 'FETCH_COLLECTIONS':
-            console.log("We made it into the reducer, Yayyy!", action.type, action.payload)
+            //console.log("We made it into the reducer, Yayyy!", action.type, action.payload)
             return {collections: action.payload}
         case 'EDIT_ITEMS':
-            console.log("We made it into the reducer")
-            return {...state, collections: state.collections.map(collection => collection.id === action.payload.category_id ? {...state, items: action.payload} : collection)}
-            default: 
+            //console.log("We made it into the reducer")
+            return {...state, items: {...state.items,...action.payload}}
+        default: 
             return state;
         }
-}
+    }
+    //if (existingCartItem) {
+      //  return cartItems.map(cartItem =>
+      //      cartItem.id === cartItemToAdd.id
+       //     ? { ...cartItem, quantity: cartItem.quantity + 1 }
+        //    : cartItem
+       // );
+   // }
+  //  return [...cartItems, {...cartItemToAdd, quantity: 1 }];
+//};
+            //return {...state, collections: state.collections.map(collection => collection.id === action.payload.category_id ? action.payload : collection)}
             //if (collection.id === action.payload.category_id) {
              //       {...collection, item: action.payload}
             //else {
@@ -37,7 +47,7 @@ export default function shopReducer(state={collections: []}, action){
                // : collection
                // )
            // }
-                    //                   if (collection.id === action.payload.category_id) {
+                    //if (collection.id === action.payload.category_id) {
 //                       {...collection, item: action.payload}
                    // else {
                    //     return collection
