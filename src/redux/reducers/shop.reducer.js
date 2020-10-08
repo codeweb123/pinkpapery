@@ -5,18 +5,22 @@ export default function shopReducer(state={collections: []}, action){
             return {collections: action.payload}
         case 'EDIT_ITEMS':
             console.log("We made it into the reducer")
-            return {
-                ...state, 
-                collections: state.collections.map(collection => {
-                    if (collection.items[] === action.payload.category_id) {
-                        return action.payload
-                    }
-                    else {
-                        return collection
-                    }
-                })
-            }
+            return {...state, items: action.payload}
+            //[
+           //     ...state.collections.filter(collection => collection.id !== action.payload.id),
+           //     Object.assign({}, action.payload)
+           // ]   
+                //
+               // collections: state.collections.map(
+               // (collection, i) => i === 0 ? {...collection, item: action.payload}
+               // : collection
+               // )
+           // }
+                    //                   if (collection.id === action.payload.category_id) {
+//                       {...collection, item: action.payload}
+                   // else {
+                   //     return collection
             default: 
-                return state
-    }
+                return state;
+        }
 }
