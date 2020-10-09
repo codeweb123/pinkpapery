@@ -23,16 +23,8 @@ class EditForm extends Component {
     update = e => {
         e.preventDefault()
         this.props.boundeditItem(this.state)
-        this.setState({
-            id: '',
-            name: '',
-            imgUrl: '',
-            price: '',
-            category_id: ''
             }
-        )
-    }
-
+    
     render() {
         return (
             <>

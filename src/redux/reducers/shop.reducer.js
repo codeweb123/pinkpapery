@@ -10,6 +10,10 @@ export default function shopReducer(state={collections: []}, action){
             return state;
         }
     }
+    //...state.collections.filter(collection => collection.id !== action.payload.id),
+    //     Object.assign({}, action.payload)
+
+    //it was simply the ... spread operator!
     //if (existingCartItem) {
       //  return cartItems.map(cartItem =>
       //      cartItem.id === cartItemToAdd.id

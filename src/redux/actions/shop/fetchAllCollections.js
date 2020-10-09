@@ -11,6 +11,19 @@ export function fetchAllCollections(collectionArray) {
         )
     }
 }
+// const URL = 'http://127.0.0.1:3000/api/v1/categories'
+// export const fetchAllCollections = () => {
+//     return async (dispatch) => {
+//         const res = await fetch(URL);
+//         const data = await res.json();
+//         console.log(data)
+//         dispatch({
+//             type: FETCH_COLLECTIONS,
+//             payload: data
+//         });
+        
+//     }
+// }
 
 // Call dispatch takes in an action and passes it to the reducer as an argument.
 //Reducer recieves the argument and asks the action.type of object. 
