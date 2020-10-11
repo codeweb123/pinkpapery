@@ -3,13 +3,48 @@ export default function shopReducer(state={collections: []}, action){
         case 'FETCH_COLLECTIONS':
             //console.log("We made it into the reducer, Yayyy!", action.type, action.payload)
             return {collections: action.payload}
-        case 'EDIT_ITEMS':
+         case 'EDIT_ITEMS':
+            return {collections: state.collections.map(item => item.id === action.payload.id ? action.payload : item)}
+            
+            // const updatedItems = state.items.collections.map((item, i) => {
+            //     // If the item exist and matches the id of the payload,
+            //     // it will update it
+            //     if (item.id === action.payload.id) {
+            //         item.value = action.payload.value;
+            //     }
+            //     return item;
+            // });
+            // return {
+            //     ...state, collections: {...state.collections, items: updatedItems }
+            // }
             //console.log("We made it into the reducer")
-            return {...state, items: {...state.items,...action.payload}}
-        default: 
-            return state;
+            //return {...state, items: {...state.items,...action.payload}}
+            //return {...state, collections: state.collections.items.map(item => item.id === action.payload.id ? action.payload : item)}
+            //return {...state, collections: {...state.collections, items: [...state.collections.items.map(item => item.id === action.payload.id ? { ...item, value: action.payload.value} : item)]}};
+            //return {
+             //   ...state,
+             //   collections: {
+             //     ...state.collections,
+              //    items: state.collections.items.map((item) =>
+             //       item._id === action.payload.id
+              //        ? { ...item, value: action.payload.value }
+               //       : null
+              //    )
+              //  },
+             // };
+            //return {
+            //    ...state,
+             //   collections: {
+             //       ...state.collections,
+             //       items: state.collections.items((item, i) => item.id == action.payload.id ? { ...item, value: action.payload.value } : null ) }
+             //   }
+            default: {
+            return {
+                ...state
         }
     }
+}
+}
     //...state.collections.filter(collection => collection.id !== action.payload.id),
     //     Object.assign({}, action.payload)
 

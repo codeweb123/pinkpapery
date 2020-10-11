@@ -6,13 +6,13 @@ import './edit-form.styles.scss';
 class EditForm extends Component {
 //form for edit, start blank
     state = {
-        id: '',
-        name: '',
-        imgUrl: '',
-        price: '',
-        category_id: ''
-     }
-
+                id: '',
+                name: '',
+                imgUrl: '',
+                price: '',
+                category_id: ''
+            }
+    
     handleChange = e => {
         const { name, value } = e.target
         this.setState({

@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { render } from '@testing-library/react';
 import { fetchAllCollections } from '../../redux/actions/shop/fetchAllCollections.js' 
 import EditForm from '../../components/edit-form/edit-form.jsx'
+//import { selectItems } from '../../redux/selectors/item.selectors.js';
 // this one is just a function that returns an object
 //class container component
 class ShopPage extends React.Component {
@@ -19,17 +20,17 @@ class ShopPage extends React.Component {
       this.props.boundfetchAllCollections()
       }
 
-  //handleEdit = () => {
-   // this.setState(
-   //   {
-    //  id: this.props.id,
-    //  name: this.props.name,
-    //  imgUrl: this.props.imgUrl,
-    //  price: this.props.price,
-    //  category_id: this.props.category_id
-    //}
-    //)
-  //}
+  // handleEdit = () => {
+  //  this.setState(
+  //    {
+  //    id: this.props.items.id,
+  //    name: this.props.items.name,
+  //    imgUrl: this.props.items.imgUrl,
+  //    price: this.props.items.price,
+  //    category_id: this.props.items.category_id
+  //   }
+  //   )
+  // }
         // (this.props.boundfetchAllCollections) we get from
         // connect as the 2nd argument.
         // bound with dispatch and it's only way we can make it to the reducer. 
@@ -51,9 +52,11 @@ render() {
     }
 
     const mapStateToProps = createStructuredSelector({
-        collections: selectCollections
+        collections: selectCollections,
+        //items: selectItems
     });
   //return all of the collections from the shop.
+  //return all of the items to the shop.
   //it is up to us to determine what we need for 
 
   //this component to compose an object that will be merged to props.

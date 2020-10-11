@@ -1,12 +1,14 @@
 const FETCH_COLLECTIONS = "FETCH_COLLECTIONS"
 //Action Creators do exactly what they sound like, 
 //they create the action objects for you.
+
 export function fetchAllCollections(collectionArray) {
     return function(dispatch) {
     fetch('api/v1/categories')
     .then(res => res.json())
     .then(data => { 
     dispatch({type: FETCH_COLLECTIONS, payload: data})
+    console.log(data)
             }
         )
     }
