@@ -1,11 +1,21 @@
 export default function shopReducer(state={collections: []}, action){
     switch (action.type) {
         case 'FETCH_COLLECTIONS':
-            //console.log("We made it into the reducer, Yayyy!", action.type, action.payload)
+            //console.log("We are in the reducer", action.type, action.payload)
             return {collections: action.payload}
-         case 'EDIT_ITEMS':
-            return {collections: state.collections.map(item => item.id === action.payload.id ? action.payload : item)}
-            
+        case 'EDIT_ITEMS':
+            let items = state.collections.find(collection => collection.id === parseInt(action.payload.category_id)).items
+            let new_items = items.map(item => item.id === parseInt(action.payload.id) ? action.payload : item)
+            return {collections: state.collections.map(category => category.id === parseInt(action.payload.category_id) ? {...category, items: new_items} : category)}
+          default: {
+            return {
+                ...state
+            }
+          }
+    }
+}
+
+
             // const updatedItems = state.items.collections.map((item, i) => {
             //     // If the item exist and matches the id of the payload,
             //     // it will update it
@@ -38,13 +48,7 @@ export default function shopReducer(state={collections: []}, action){
              //       ...state.collections,
              //       items: state.collections.items((item, i) => item.id == action.payload.id ? { ...item, value: action.payload.value } : null ) }
              //   }
-            default: {
-            return {
-                ...state
-        }
-    }
-}
-}
+             
     //...state.collections.filter(collection => collection.id !== action.payload.id),
     //     Object.assign({}, action.payload)
 

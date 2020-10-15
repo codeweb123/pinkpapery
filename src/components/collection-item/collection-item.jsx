@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import Button from '../button/button';
 import { addItem } from '../../redux/actions/cart/addItem';
 //after importing addItem from cart.actions and connect we know we need to add the mapDispatchToProps

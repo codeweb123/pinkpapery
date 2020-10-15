@@ -4,14 +4,17 @@ import { editItem } from '../../redux/actions/shop/editItems';
 import './edit-form.styles.scss';
 
 class EditForm extends Component {
+    constructor(){
+        super()
 //form for edit, start blank
-    state = {
+    this.state = {
                 id: '',
                 name: '',
-                imgUrl: '',
+                imageUrl: '',
                 price: '',
                 category_id: ''
             }
+    }
     
     handleChange = e => {
         const { name, value } = e.target
@@ -22,7 +25,7 @@ class EditForm extends Component {
 
     update = e => {
         e.preventDefault()
-        this.props.boundeditItem(this.state)
+        this.props.boundeditItem({id: parseInt(this.state.id), name: this.state.name, imageUrl: this.state.imageUrl, price: parseInt(this.state.price), category_id: parseInt(this.state.category_id)})
             }
     
     render() {
@@ -97,4 +100,4 @@ const mapDispatchToProps = (dispatch) => {
     }
   };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditForm);
+export default connect(mapStateToProps,mapDispatchToProps)(EditForm);

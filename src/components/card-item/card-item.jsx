@@ -1,12 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-
 import './card-item.styles.scss';
 
+//Object destructuring - passing props - {props.title} etc.
 const CardItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
     <div 
     className={`${size} card-item`} 
-    onClick={() => history.push(`${match.url}${linkUrl}`)} //match prop will link into the linkURL.
+    onClick={() => history.push(`${match.url}${linkUrl}`)} 
+    //match prop will link into the linkURL.
     >
         <div
         className='background-image'
@@ -26,4 +27,4 @@ export default withRouter(CardItem);
 //that takes a component and returns a modified component. 
 //export default withRouter(CardItem) syntax gives us access to
 //Router the history, location, match, props. 
-//history access only from HomePage componet where i was originally rendered. 
+//history access only from HomePage componet where I was originally rendered. 

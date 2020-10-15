@@ -9,7 +9,6 @@ import ShippingPage from './pages/shipping/shipping';
 import Navbar from './components/navbar/navbar.jsx';
 import Footer from './components/footer/footer.jsx';
 //import { connect } from 'react-redux';
-
 // App.js is built to serve makers of static single page apps. 
 // Central Display/Navigation of the site- renders all components on the pages
 //<Switch></Switch> component is wrapped around the <Route/> component. 

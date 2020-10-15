@@ -11,26 +11,26 @@ import EditForm from '../../components/edit-form/edit-form.jsx'
 //class container component
 class ShopPage extends React.Component {
   //initializes
-  constructor(props) {
+  constructor() {
   //allows class component to access methods/functionality from React.Component  
-    super(props)
+    super()
   }
   //lifecycle method( Mounting Phase)- first time on the DOM
   componentDidMount() {
       this.props.boundfetchAllCollections()
       }
 
-  // handleEdit = () => {
-  //  this.setState(
-  //    {
-  //    id: this.props.items.id,
-  //    name: this.props.items.name,
-  //    imgUrl: this.props.items.imgUrl,
-  //    price: this.props.items.price,
-  //    category_id: this.props.items.category_id
-  //   }
-  //   )
-  // }
+   handleEdit = (event) => {
+    this.setState(
+      {
+      id: this.props.items.id,
+      name: this.props.items.name,
+      imgUrl: this.props.items.imgUrl,
+      price: this.props.items.price,
+      category_id: this.props.items.category_id
+     }
+    )
+   }
         // (this.props.boundfetchAllCollections) we get from
         // connect as the 2nd argument.
         // bound with dispatch and it's only way we can make it to the reducer. 
@@ -52,11 +52,9 @@ render() {
     }
 
     const mapStateToProps = createStructuredSelector({
-        collections: selectCollections,
-        //items: selectItems
+        collections: selectCollections
     });
   //return all of the collections from the shop.
-  //return all of the items to the shop.
   //it is up to us to determine what we need for 
 
   //this component to compose an object that will be merged to props.
@@ -74,8 +72,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);
 //connect returns a HOC.
 // That returned function will pass any information we need from the 
 //Redux store's state or a wrapped action creator to our component as props.
-
-
 
 //constructor(props) {
     //    super(props);

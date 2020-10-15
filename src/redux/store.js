@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './root-reducer';
-
 //we use thunk for organization. 
 //Organize the logic(fetch) out of components 
 //Thunk is middleware is any bit of code that intercepts a process and changes the outcome
@@ -19,7 +18,7 @@ import rootReducer from './root-reducer';
 //Redux is using Context which is built into react. Redux's ability
 // to connect to any component.
 //State management is a Redux feature.
-//
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const enhancer = composeEnhancers(
   applyMiddleware(thunk),

@@ -1,6 +1,5 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
-
 //Stripe wants price in cents so multiply by 100
 
 const StripeCheckoutButton = ({ price }) => {
