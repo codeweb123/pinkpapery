@@ -10,7 +10,10 @@ const Button = ({ children, ...otherProps }) => (
 export default Button;
 
 // Example {children}
-// Whenever this component is invoked {props.children} will also be displayed and this is just a reference to what is between the opening and closing tags of the component.
+// Whenever this component is invoked {props.children} will 
+// also be displayed and this is just a reference to what is 
+// between the opening and closing tags of the component.
+
 // App.js
 // render () {
 //   return (

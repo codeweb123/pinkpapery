@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Button from '../button/button';
 import { addItem } from '../../redux/actions/cart/addItem';
-//after importing addItem from cart.actions and connect we know we need to add the mapDispatchToProps
-//because we need to dispatch this addItem action.
+// after importing addItem from cart.actions and connect 
+// we know we need to add the mapDispatchToProps
+// because we need to dispatch this addItem action.
 import './collection-item.styles.scss';
 
 const CollectionItem = ({ item, addItem }) => {
@@ -27,8 +28,7 @@ const CollectionItem = ({ item, addItem }) => {
 )};
 
 const mapDispatchToProps = dispatch => ({
-    addItem: item => dispatch(addItem(item)),
-    //handleEdit: item => dispatch(handleEdit(item))
+    addItem: item => dispatch(addItem(item))
 })
 //mapDispatchToProps will be a function that gets dispatch and whenever there is addItem function
 //it will get an item in as the property and then we'll dispatch it to the store with our

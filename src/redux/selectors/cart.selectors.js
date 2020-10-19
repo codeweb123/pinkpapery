@@ -3,7 +3,8 @@
 //Input selector is selectCart
 import { createSelector } from 'reselect';
 
-const selectCart = state => state.cart;//gets whole reducer state and gets a slice of it
+const selectCart = state => state.cart;
+//gets whole reducer state and gets a slice of it
 
 //selectCartItems is a property
 //createSelector call and it will take 2 arguments.
@@ -42,6 +43,7 @@ export const selectCartTotal = createSelector(
     )
 );
 
-  //Pass in [selectCartItems] and get cartItems and use reduce method on the cartItems and gives us the total quantity on the cartItems. 
-
+  //Pass in [selectCartItems] and get cartItems and use 
+  //reduce method on the cartItems and gives us the total
+  // quantity on the cartItems. 
 //.reduce( ) method reduces the array to a single value. 

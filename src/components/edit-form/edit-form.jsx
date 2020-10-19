@@ -13,7 +13,7 @@ class EditForm extends Component {
                 imageUrl: '',
                 price: '',
                 category_id: ''
-            }
+        }
     }
     
     handleChange = e => {

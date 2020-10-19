@@ -7,11 +7,11 @@ export default function shopReducer(state={collections: []}, action){
             let items = state.collections.find(collection => collection.id === parseInt(action.payload.category_id)).items
             let new_items = items.map(item => item.id === parseInt(action.payload.id) ? action.payload : item)
             return {collections: state.collections.map(category => category.id === parseInt(action.payload.category_id) ? {...category, items: new_items} : category)}
-          default: {
+        default: {
             return {
                 ...state
             }
-          }
+        }
     }
 }
 

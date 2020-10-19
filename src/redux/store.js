@@ -27,16 +27,3 @@ const enhancer = composeEnhancers(
 const store = createStore(rootReducer, enhancer);
 
 export default store;
-
-//function createStore(reducer) {
-//    let state = reducer( undefined, {type: "default"})
-// return {
- //   dispatch: function(action){ state = reducer(state, action)},
-//    getState: function() {
- //       console.log(state)
-  //      return state
-  //  
-  // let store = createStore(counterReducer)    
-// store variable is there 
-
-
