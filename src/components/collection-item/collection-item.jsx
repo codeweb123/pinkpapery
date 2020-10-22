@@ -24,7 +24,8 @@ const CollectionItem = ({ item, addItem }) => {
         </div>
         <Button onClick ={() => addItem(item)} inverted="true"> Add to cart</Button>
         </div>
-        //button onclick function will fire the addItem calling the method and passing item in.
+        //button onclick function will fire the addItem calling 
+        //the method and passing item in.
 )};
 
 const mapDispatchToProps = dispatch => ({
