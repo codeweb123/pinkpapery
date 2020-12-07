@@ -4,11 +4,13 @@ const FETCH_COLLECTIONS = "FETCH_COLLECTIONS"
 
 export function fetchAllCollections(collectionArray) {
     return function(dispatch) {
+    console.log('c')
     fetch('api/v1/categories')
     .then(res => res.json())
     .then(data => { 
     dispatch({type: FETCH_COLLECTIONS, payload: data})
-    console.log(data)
+    console.log('d')
+
             }
         )
     }

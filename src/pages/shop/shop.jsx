@@ -17,8 +17,10 @@ class ShopPage extends React.Component {
   }
   //lifecycle method( Mounting Phase)- first time on the DOM
   componentDidMount() {
+    console.log('a')
       this.props.boundfetchAllCollections()
-      }
+    console.log('b')  
+    }
   // (this.props.boundfetchAllCollections) we get from
   // connect as the 2nd argument.
   // bound with dispatch and it's only way we can make it to the reducer. 

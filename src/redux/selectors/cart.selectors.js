@@ -14,8 +14,8 @@ const selectCart = state => state.cart;
 //	returns cart.cartItems which are all of the cart items in the cart.
 
 export const selectCartItems = createSelector(
-  [selectCart],
-  cart => cart.cartItems
+  [selectCart], //First is [selectCart] = an array of collection of input selectors
+  cart => cart.cartItems //Second is Function that will return the value we want out of the selector.
 );
 
 export const selectCartHidden = createSelector(
