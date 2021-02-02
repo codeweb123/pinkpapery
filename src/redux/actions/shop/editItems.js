@@ -4,7 +4,7 @@ export const editItem = (data) => {
     console.log("INSIDE THE EDIT")
     return (dispatch) => {
         dispatch({type: EDIT_ITEMS, payload: data})
-        fetch(`api/v1/items/${data.id}`, {
+        fetch($`{API_ROOT}items/${data.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
@@ -13,6 +13,8 @@ export const editItem = (data) => {
         })
     }
 }
+
+//api/v1/items/${data.id}
 
 // export const editItem = (data) => {
 //     return (dispatch) => {
